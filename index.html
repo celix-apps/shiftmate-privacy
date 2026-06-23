@@ -48,7 +48,7 @@
   <h1>ShiftMate Privacy Policy</h1>
   <p class="meta">
     <strong>Effective Date:</strong> May 21, 2026 &nbsp;|&nbsp;
-    <strong>Last Updated:</strong> May 21, 2026 &nbsp;|&nbsp;
+    <strong>Last Updated:</strong> June 24, 2026 &nbsp;|&nbsp;
     <strong>Developer:</strong> Celix Apps
   </p>
 
@@ -84,12 +84,13 @@
   <!-- 2 -->
   <h2 id="s2">2. Information We Collect and How It Is Stored</h2>
 
-  <h3>2.1 Shift and Schedule Data</h3>
-  <p>You may enter shift schedules, work patterns, notes, and related calendar information into the App. This data:</p>
+  <h3>2.1 Shift, Schedule, and Profile Data</h3>
+  <p>You may enter shift schedules, work patterns, notes, and related calendar information into the App. The App also stores a user profile containing your display name, country, and language preferences. This data:</p>
   <ul>
     <li>Is stored <strong>locally on your device</strong> by default.</li>
     <li>Is <strong>optionally synced</strong> to your personal iCloud account if you enable iCloud Sync. When synced, data is stored in a private CloudKit container associated exclusively with your Apple ID. We do not have access to, and cannot retrieve, your iCloud data.</li>
     <li>Is <strong>never transmitted to our servers</strong> or any third-party server operated by us.</li>
+    <li>Is <strong>shared on-device</strong> with the ShiftMate Widget and Live Activity extensions via a secure App Group container (<code>group.com.celix.shiftmate</code>). This sharing occurs entirely on your device and does not involve any network transmission.</li>
   </ul>
   <p>You are solely responsible for the accuracy, completeness, and legality of the shift data you enter into the App.</p>
 
@@ -112,7 +113,18 @@
     <li>Do not contain personal identifiers, health data, or shift content.</li>
     <li>May be included in a diagnostic report if you voluntarily submit feedback through Apple's crash reporting mechanism, in which case Apple's privacy policy governs that submission.</li>
   </ul>
+  <p>The App also uses Apple's MetricKit framework to collect on-device performance diagnostics (CPU usage, memory consumption, app launch duration). MetricKit data is processed by Apple on your device. If you have enabled "Share Analytics" in iOS Settings, aggregated and anonymized diagnostic reports may be made available to us through App Store Connect in accordance with Apple's privacy policy. We do not receive raw or individually identifiable MetricKit data.</p>
   <p>We do not integrate any third-party analytics SDK (such as Firebase, Mixpanel, Amplitude, or similar). No behavioral tracking or user profiling is performed.</p>
+
+  <h3>2.4 Calendar Data (EventKit)</h3>
+  <p>With your explicit permission, the App may sync your shift schedules to your device's native Calendar application using Apple's EventKit framework. If you enable the Calendar Sync feature:</p>
+  <ul>
+    <li>The App requests <strong>Full Calendar Access</strong> solely to create, update, and remove shift events in the calendar(s) you select.</li>
+    <li>We do <strong>not</strong> read, access, or process any calendar events that were not created by ShiftMate.</li>
+    <li>Calendar events are written to the iOS Calendar database on your device. If your calendar account is configured to sync externally (e.g., iCloud Calendar, Google Calendar), that sync is governed by the respective service's privacy policy and is outside our control.</li>
+    <li>Calendar data is <strong>never transmitted to our servers</strong>.</li>
+    <li>You may revoke Calendar access at any time through <strong>iOS Settings → Privacy &amp; Security → Calendars → ShiftMate</strong>. Revoking access will stop future syncing but will not remove previously created calendar events.</li>
+  </ul>
 
   <h3>2.5 Subscription and Payment Data</h3>
   <p>The App offers optional Pro subscriptions processed entirely through Apple's in-app purchase system (StoreKit). Regarding payment data:</p>
@@ -153,6 +165,9 @@
     <li>Provide core app functionality (shift scheduling, alarm notifications, earnings calculation, health insights).</li>
     <li>Sync your data across your own devices via your personal iCloud account (if enabled).</li>
     <li>Display relevant in-app notifications and alarms on your device.</li>
+    <li>Sync shift events to your device's Calendar app (if you enable Calendar Sync).</li>
+    <li>Fetch public holiday data for your country from a public holiday API to display in the shift calendar.</li>
+    <li>Check for available App Store updates using Apple's public lookup API.</li>
     <li>Diagnose crashes or bugs through on-device logs.</li>
   </ul>
   <p>We do not use your information for:</p>
@@ -248,31 +263,60 @@
 
   <!-- 10 -->
   <h2 id="s10">10. Third-Party Services</h2>
-  <p>The App integrates with the following Apple platform services. Each is governed by its own privacy policy, over which we have no control and for which we assume no responsibility:</p>
+  <p>The App integrates with the following services. Each is governed by its own privacy policy, over which we have no control and for which we assume no responsibility:</p>
   <table>
     <tr>
       <th>Service</th>
       <th>Purpose</th>
+      <th>Data Sent</th>
       <th>Privacy Policy</th>
     </tr>
     <tr>
       <td>Apple iCloud / CloudKit</td>
       <td>Optional data sync</td>
+      <td>None (private container, Apple-managed)</td>
       <td><a href="https://www.apple.com/legal/privacy" target="_blank">apple.com/legal/privacy</a></td>
     </tr>
     <tr>
       <td>Apple HealthKit</td>
       <td>Sleep and activity insights</td>
+      <td>None (on-device only)</td>
       <td><a href="https://www.apple.com/legal/privacy" target="_blank">apple.com/legal/privacy</a></td>
     </tr>
     <tr>
       <td>Apple StoreKit / App Store</td>
       <td>Subscription processing</td>
+      <td>None (Apple-managed)</td>
       <td><a href="https://www.apple.com/legal/privacy" target="_blank">apple.com/legal/privacy</a></td>
     </tr>
     <tr>
       <td>Apple Push Notification Service</td>
       <td>Local alarm delivery</td>
+      <td>None (locally scheduled)</td>
+      <td><a href="https://www.apple.com/legal/privacy" target="_blank">apple.com/legal/privacy</a></td>
+    </tr>
+    <tr>
+      <td>Apple EventKit</td>
+      <td>Optional calendar sync</td>
+      <td>None (on-device only)</td>
+      <td><a href="https://www.apple.com/legal/privacy" target="_blank">apple.com/legal/privacy</a></td>
+    </tr>
+    <tr>
+      <td>Apple MetricKit</td>
+      <td>On-device performance diagnostics</td>
+      <td>Aggregated/anonymized (via Apple, opt-in)</td>
+      <td><a href="https://www.apple.com/legal/privacy" target="_blank">apple.com/legal/privacy</a></td>
+    </tr>
+    <tr>
+      <td>Nager.Date Public Holiday API</td>
+      <td>Fetch official public holidays</td>
+      <td>Country code and year (no personal data)</td>
+      <td><a href="https://nager.at/privacy-policy" target="_blank">nager.at/privacy-policy</a></td>
+    </tr>
+    <tr>
+      <td>Apple iTunes Lookup API</td>
+      <td>Check for App Store updates</td>
+      <td>App bundle identifier (no personal data)</td>
       <td><a href="https://www.apple.com/legal/privacy" target="_blank">apple.com/legal/privacy</a></td>
     </tr>
   </table>
@@ -399,7 +443,7 @@
   </div>
 
   <footer>
-    <p>This privacy policy was last reviewed and updated on May 25, 2026.</p>
+    <p>This privacy policy was last reviewed and updated on June 24, 2026.</p>
   </footer>
 
 </div>
