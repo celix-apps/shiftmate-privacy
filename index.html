@@ -48,7 +48,7 @@
   <h1>ShiftMate Privacy Policy</h1>
   <p class="meta">
     <strong>Effective Date:</strong> May 21, 2026 &nbsp;|&nbsp;
-    <strong>Last Updated:</strong> June 24, 2026 &nbsp;|&nbsp;
+    <strong>Last Updated:</strong> October 16, 2026 &nbsp;|&nbsp;
     <strong>Developer:</strong> Celix Apps
   </p>
 
@@ -95,9 +95,9 @@
   <p>You are solely responsible for the accuracy, completeness, and legality of the shift data you enter into the App.</p>
 
   <h3>2.2 Health Data (HealthKit)</h3>
-  <p>With your explicit permission, the App may request access to health-related data through Apple's HealthKit framework, including sleep analysis and physical activity data. Regarding this data:</p>
+  <p>With your explicit permission, the App may request access to health-related data through Apple's HealthKit framework, limited to <strong>sleep analysis (read-only)</strong>. The App never writes any data to Apple Health. Regarding this data:</p>
   <ul>
-    <li>It is accessed solely to display personalized insights within the App (e.g., fatigue score, sleep overview).</li>
+    <li>It is accessed solely to display personalized insights within the App (the fatigue score).</li>
     <li>It is <strong>processed entirely on your device</strong> and is <strong>never transmitted</strong> to our servers or any external server.</li>
     <li>It is <strong>never shared</strong> with third parties, advertisers, or data brokers.</li>
     <li>You may revoke HealthKit access at any time through iOS Settings → Privacy &amp; Security → Health → ShiftMate.</li>
@@ -142,6 +142,19 @@
     <li>Are your sole responsibility once exported.</li>
     <li>Are not transmitted to us.</li>
   </ul>
+  <p>Backups include your shifts, alarms, settings and, if you created one, your sleep profile (see 2.7). They never contain HealthKit data.</p>
+
+  <h3>2.7 Sleep Profile and Sleep Plan</h3>
+  <p>The Sleep Plan suggests sleep times around your upcoming shifts. To calculate it, you may enter a sleep profile (for example preparation time, commute times and the amount of sleep you need). Regarding this data:</p>
+  <ul>
+    <li>The sleep profile is stored <strong>only on your device</strong>; it is not synced to iCloud and is never transmitted to our servers.</li>
+    <li>The Sleep Plan is calculated on your device from your shift times and your sleep profile. It does not use HealthKit data.</li>
+    <li>It is included only in a backup file that you create yourself, and it is deleted when you use "Delete My Account" or uninstall the App.</li>
+    <li>Sleep suggestions are general information and are not medical advice.</li>
+  </ul>
+
+  <h3>2.8 Notifications and Alarms</h3>
+  <p>With your permission, the App schedules local notifications for shift alarms, shift reminders and optional sleep reminders (bedtime, caffeine and safe drive home). On iOS 26 and later, shift alarms may be scheduled as system alarms through Apple's AlarmKit framework, again only with your permission. All alarms and reminders are scheduled <strong>on your device</strong>; their content is not sent to us or to any third party. You may change these permissions at any time in iOS Settings.</p>
 
   <!-- 3 -->
   <h2 id="s3">3. Data We Do NOT Collect</h2>
@@ -240,7 +253,7 @@
   <p>You may export your shift data using the App's export functionality.</p>
 
   <h3>8.5 Right to Withdraw Consent</h3>
-  <p>You may withdraw any permission you have granted (Health, Location, Notifications) at any time through iOS Settings without affecting prior use.</p>
+  <p>You may withdraw any permission you have granted (Health, Calendar, Notifications, Alarms) at any time through iOS Settings without affecting prior use.</p>
 
   <h3>8.6 Right to Restrict Processing</h3>
   <p>You may contact us to request restriction of any processing of personal data we hold directly.</p>
@@ -279,7 +292,7 @@
     </tr>
     <tr>
       <td>Apple HealthKit</td>
-      <td>Sleep and activity insights</td>
+      <td>Sleep insights (read-only)</td>
       <td>None (on-device only)</td>
       <td><a href="https://www.apple.com/legal/privacy" target="_blank">apple.com/legal/privacy</a></td>
     </tr>
@@ -291,8 +304,14 @@
     </tr>
     <tr>
       <td>Apple Push Notification Service</td>
-      <td>Local alarm delivery</td>
-      <td>None (locally scheduled)</td>
+      <td>Silent change notifications for optional iCloud sync</td>
+      <td>None (Apple-managed)</td>
+      <td><a href="https://www.apple.com/legal/privacy" target="_blank">apple.com/legal/privacy</a></td>
+    </tr>
+    <tr>
+      <td>Apple AlarmKit (iOS 26 and later)</td>
+      <td>System alarms for your shifts</td>
+      <td>None (on-device only)</td>
       <td><a href="https://www.apple.com/legal/privacy" target="_blank">apple.com/legal/privacy</a></td>
     </tr>
     <tr>
@@ -376,7 +395,7 @@
   <p><strong>Data Controller:</strong> Celix Apps is the data controller for any personal data you voluntarily provide to us (e.g., support emails). For data stored on your device or in your personal iCloud account, Apple Inc. acts as a separate data controller under its own privacy policy.</p>
   <p><strong>Lawful Basis for Processing:</strong></p>
   <ul>
-    <li><strong>Consent</strong> — When you grant permissions for HealthKit, Location, or Notifications, processing is based on your explicit consent. You may withdraw consent at any time via iOS Settings.</li>
+    <li><strong>Consent</strong> — When you grant permissions for HealthKit, Calendar, Notifications, or Alarms, processing is based on your explicit consent. You may withdraw consent at any time via iOS Settings.</li>
     <li><strong>Legitimate Interests</strong> — On-device diagnostic logging (OSLog) is based on our legitimate interest in maintaining app stability. This does not override your fundamental rights.</li>
     <li><strong>Contract</strong> — Processing necessary to deliver the core features you requested when you downloaded the App.</li>
   </ul>
