@@ -36,6 +36,19 @@
     .toc p { font-weight: 600; margin-bottom: 8px; }
     .toc ol { margin-left: 18px; }
     .toc li { margin-bottom: 4px; font-size: 0.9rem; }
+    .site-nav { max-width: 780px; margin: 0 auto 20px; display: flex; align-items: center; gap: 8px 18px; flex-wrap: wrap; }
+    .site-nav .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.05rem; color: #1d1d1f; margin-right: auto; }
+    .site-nav .brand img { width: 32px; height: 32px; border-radius: 8px; }
+    .site-nav a { font-size: 0.9rem; font-weight: 500; }
+    .site-nav .store { background: #1d1d1f; color: #fff; padding: 7px 14px; border-radius: 999px; }
+    .site-nav .store:hover { text-decoration: none; background: #000; }
+    footer .links { margin-top: 6px; }
+    @media (max-width: 600px) {
+      body { padding-top: 20px; }
+      .site-nav { gap: 6px 14px; }
+      .site-nav .brand { flex-basis: 100%; }
+      table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    }
     @media (max-width: 600px) {
       .container { padding: 28px 20px; }
       h1 { font-size: 1.5rem; }
@@ -43,6 +56,12 @@
   </style>
 </head>
 <body>
+<nav class="site-nav" aria-label="ShiftMate">
+  <a class="brand" href="https://celix-apps.github.io/shiftmate/"><img src="https://celix-apps.github.io/shiftmate/img/icon-192.png" alt="" width="32" height="32">ShiftMate</a>
+  <a href="https://celix-apps.github.io/shiftmate/">Home</a>
+  <a href="mailto:support.shiftmate@icloud.com">Support</a>
+  <a class="store" href="https://apps.apple.com/app/id6764603778">App Store</a>
+</nav>
 <div class="container">
 
   <h1>ShiftMate Privacy Policy</h1>
@@ -462,7 +481,8 @@
   </div>
 
   <footer>
-    <p>This privacy policy was last reviewed and updated on June 24, 2026.</p>
+    <p>This privacy policy was last reviewed and updated on November 12, 2026.</p>
+    <p class="links">&copy; 2026 Resul Çelik (Celix Apps) &middot; <a href="https://celix-apps.github.io/shiftmate/">ShiftMate</a> &middot; <a href="mailto:support.shiftmate@icloud.com">Support</a></p>
   </footer>
 
 </div>
